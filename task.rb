@@ -22,3 +22,12 @@ class Task
 
 
 end
+
+
+# task1 = Task.new("Buy milk", "Saturday 9AM")
+# task2 = Task.new("Laundry", "Saturday 2PM")
+# task2 = Task.new("Watch Netflix", "Saturday 9PM")
+#
+# puts task1.description
+# task1.description = "Buy eggs"
+# puts task1.description

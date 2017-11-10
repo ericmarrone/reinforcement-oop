@@ -1,21 +1,20 @@
 require_relative "task"
 
 class TodoList
-  @@tasks = []
+  @@lists=[]
 
   def initialize(name)
     @list_name = name
-
-
+    @tasks = []
   end
 
-  def add_task(description, due_date)
-    new_task = Task.new(description, due_date)
-    @@tasks << new_task
+  def add_task(new_task)
+    @tasks << new_task
+    return new_task
   end
 
-  def self.all
-    @@tasks
+  def all
+    @tasks
   end
 
 
@@ -26,8 +25,20 @@ end
 my_list = TodoList.new("My List")
 
 
-task1 = my_list.add_task("Buy milk", "Saturday 9AM")
-task2 = my_list.add_task("Laundry", "Saturday 2PM")
-task2 = my_list.add_task("Watch Netflix", "Saturday 9PM")
 
-puts TodoList.all.inspect
+
+task1 = Task.new("Buy milk", "Saturday 9AM")
+task2 = Task.new("Laundry", "Saturday 2PM")
+task3 = Task.new("Watch Netflix", "Saturday 9PM")
+task4 = Task.new("Groceries", "Tomorrow")
+my_list.add_task(task4)
+my_list.add_task(task1)
+my_list.add_task(task2)
+my_list.add_task(task3)
+
+
+puts my_list.all.inspect
+
+
+puts task4.description
+puts task4.due_date
